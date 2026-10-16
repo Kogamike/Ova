@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa Interactivo de Módulos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Contenedor del Mapa -->
+    <div class="mapa-wrapper">
+        <img src="imagenes/mapa.jpg" alt="Mapa de Niveles" class="mapa-img">
+
+        <!-- Puntos interactivos sobre las casillas -->
+        <div class="punto-modulo" id="mod-1" onclick="abrirModal('Estación 2: Organización de la tabla periódica', 'Descubre cómo se organizan las familias y los períodos.')"></div>
+        <div class="punto-modulo" id="mod-2" onclick="abrirModal('Estación 3: Estación 3: Conozco los elementos químicos', 'Compara propiedades periódicas para encontrar patrones.')"></div>
+        <div class="punto-modulo" id="mod-3" onclick="abrirModal('Estación 4: Símbolos secretos',  'Descifra los símbolos químicos del laboratorio.')"></div>
+        <div class="punto-modulo" id="mod-4" onclick="abrirModal('Estación 4: Símbolos secretos', 'Descifra los símbolos químicos del laboratorio.')"></div>
+        <div class="punto-modulo" id="mod-5" onclick="abrirModal('Estación 5: Clasifico elementos', 'Agrupa metales, no metales y metaloides con evidencias.')"></div>
+        <div class="punto-modulo" id="mod-6" onclick="abrirModal('Estación 6: Elementos a mi alrededor', 'Relaciona los elementos con materiales y usos cotidianos.')"></div>
+        <div class="punto-modulo" id="mod-7" onclick="abrirModal('Estación 7: Explico mis decisiones', 'Justifica cómo ubicaste y comparaste elementos».')"></div>
+        <div class="punto-modulo" id="mod-8" onclick="abrirModal('lorem ipsun', 'lorem ipsun')"></div>
+        <div class="punto-modulo" id="mod-9" onclick="abrirModal('lorem ipsum', 'lorem ipsum')"></div>
+        <div class="punto-modulo" id="mod-10" onclick="abrirModal('Estación 8: La llave del cofre', 'Reúne tus claves para abrir el tesoro».')"></div>
+        <div class="punto-modulo" id="mod-11" onclick="abrirModal('Estación 1: La historia de la tabla periódica', 'Recorre las ideas de quienes intentaron ordenar los elementos y consigue la primera clave.')"></div>
+    </div>
+
+    <!-- Ventana Modal (Pop-up) -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-contenido">
+            <button class="btn-cerrar" onclick="cerrarModal()">&times;</button>
+            <h3 class="modal-titulo" id="modalTitulo">Título del Módulo</h3>
+            <p class="modal-texto" id="modalTexto">Aquí irán las instrucciones o información detallada.</p>
+            <button class="btn-accion" onclick="cerrarModal()">Entendido</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

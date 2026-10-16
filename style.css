@@ -1,0 +1,146 @@
+/* --- Reset Básico --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f1d16;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* --- 1. Contenedor del Mapa --- */
+.mapa-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.mapa-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 2. Puntos/Casillas Cliqueables (Hotspots) --- */
+.punto-modulo {
+    position: absolute;
+    width: 11%;
+    height: 6%;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: rgba(212, 175, 55, 0.3);
+    transition: transform 0.2s, background 0.2s;
+    animation: pulso 2s infinite;
+}
+
+.punto-modulo:hover {
+    transform: scale(1.15);
+    background: rgba(255, 215, 0, 0.7);
+}
+
+@keyframes pulso {
+    0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+}
+
+/* UBICACIONES EXACTAS DE LOS PUNTOS SOBRE LA IMAGEN */
+#mod-1 { top: 79%; left: 54%; }
+#mod-2 { top: 70%; left: 56%; }
+#mod-3 { top: 61%; left: 33%; }
+#mod-4 { top: 59%; left: 59%; }
+#mod-5 { top: 53%; left: 42%; }
+#mod-6 { top: 35%; left: 60%; }
+#mod-7 { top: 29%; left: 32%; }
+#mod-8 { top: 23%; left: 54%; }
+#mod-9 { top: 17%; left: 42%; }
+#mod-10 { top: 9%; left: 47%; } /*el del cofre*/
+#mod-11 { top: 78%; left: 28%; } /*el del laboratorio*/
+
+/* --- 3. Ventana Modal (Pop-up) --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contenido {
+    background: #112218;
+    border: 2px solid #2d5a3f;
+    border-radius: 12px;
+    padding: 24px;
+    width: 90%;
+    max-width: 420px;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    animation: aparecer 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes aparecer {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-titulo {
+    color: #4ade80;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.modal-texto {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #d1d5db;
+    margin-bottom: 20px;
+}
+
+.btn-cerrar {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.btn-cerrar:hover {
+    color: #fff;
+}
+
+.btn-accion {
+    display: inline-block;
+    background: #16a34a;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-accion:hover {
+    background: #22c55e;
+}
